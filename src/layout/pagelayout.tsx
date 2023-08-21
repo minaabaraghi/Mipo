@@ -4,16 +4,17 @@ import { Outlet, Route, Routes } from "react-router-dom";
 
 import { Box } from "@mui/material";
 
-interface BaseLayoutProps {
+interface PageLayoutProps {
   children?: ReactNode;
 }
 
-const BaseLayout: FC<BaseLayoutProps> = ({ children }) => {
+const PageLayout: FC<PageLayoutProps> = ({ children }) => {
   return (
     <Box
       sx={{
         flex: 1,
         height: "100%",
+        background: "red",
       }}
     >
       {children || <Outlet />}
@@ -21,8 +22,8 @@ const BaseLayout: FC<BaseLayoutProps> = ({ children }) => {
   );
 };
 
-BaseLayout.propTypes = {
+PageLayout.propTypes = {
   children: PropTypes.node,
 };
 
-export default BaseLayout;
+export default PageLayout;
